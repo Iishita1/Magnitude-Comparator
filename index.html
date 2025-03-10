@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sorting Algorithm Visualizer</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Sorting Algorithm Visualizer</h1>
+    <div class="input-section">
+      <input type="text" id="numberInput" placeholder="Enter numbers (e.g., 5, 3, 8, 1)">
+      <button id="randomButton">Generate Random Numbers</button>
+      <select id="algorithmSelect">
+        <option value="bubble">Bubble Sort</option>
+        <option value="selection">Selection Sort</option>
+        <option value="insertion">Insertion Sort</option>
+      </select>
+      <button id="sortButton">Sort</button>
+      <button id="resetButton">Reset</button>
+    </div>
+    <div class="speed-control">
+      <label for="speedSlider">Speed:</label>
+      <input type="range" id="speedSlider" min="100" max="1000" value="500">
+      <span id="speedValue">500 ms</span>
+    </div>
+    <div class="visualization" id="visualization"></div>
+    <div class="controls">
+      <button id="stepButton">Step</button>
+      <button id="autoButton">Auto Sort</button>
+      <button id="pauseButton" disabled>Pause</button>
+    </div>
+    <div class="explanation">
+        <h2 id="algorithmTitle">How Bubble Sort Works</h2>
+        <div id="algorithmDescription">
+          <p><strong>What is Bubble Sort?</strong></p>
+          <p>Bubble Sort is one of the simplest sorting algorithms. It repeatedly steps through the list, compares adjacent elements, and swaps them if they are in the wrong order. This process is repeated until the list is sorted.</p>
+          <p><strong>How Does It Work?</strong></p>
+          <ol>
+            <li>Start at the beginning of the list.</li>
+            <li>Compare the first two elements. If the first is greater than the second, swap them.</li>
+            <li>Move to the next pair of elements and repeat the comparison and swap if necessary.</li>
+            <li>Continue this process until you reach the end of the list.</li>
+            <li>Repeat the entire process until no swaps are needed, indicating the list is sorted.</li>
+          </ol>
+          <p><strong>Where is It Used?</strong></p>
+          <p>Bubble Sort is rarely used in practice due to its inefficiency for large datasets. It is often used in educational settings to introduce the concept of sorting algorithms.</p>
+        </div>
+      </div>
+  </div>
+  <audio id="swapSound" src="swap.mp3"></audio>
+  <audio id="compareSound" src="compare.mp3"></audio>
+  <script src="script.js"></script>
+</body>
+</html>
