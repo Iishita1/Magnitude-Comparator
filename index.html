@@ -12,11 +12,6 @@
     <div class="input-section">
       <input type="text" id="numberInput" placeholder="Enter numbers (e.g., 5, 3, 8, 1)">
       <button id="randomButton">Generate Random Numbers</button>
-      <select id="algorithmSelect">
-        <option value="bubble">Bubble Sort</option>
-        <option value="selection">Selection Sort</option>
-        <option value="insertion">Insertion Sort</option>
-      </select>
       <button id="sortButton">Sort</button>
       <button id="resetButton">Reset</button>
     </div>
@@ -25,29 +20,45 @@
       <input type="range" id="speedSlider" min="100" max="1000" value="500">
       <span id="speedValue">500 ms</span>
     </div>
-    <div class="visualization" id="visualization"></div>
+    <div class="visualization-section">
+      <div class="visualization" id="visualization"></div>
+      <div class="binary-panel" id="binaryPanel"></div>
+    </div>
+    <div class="comparison-screen">
+      <h3>Comparison</h3>
+      <div id="comparisonResult"></div>
+    </div>
     <div class="controls">
       <button id="stepButton">Step</button>
       <button id="autoButton">Auto Sort</button>
       <button id="pauseButton" disabled>Pause</button>
     </div>
-    <div class="explanation">
-        <h2 id="algorithmTitle">How Bubble Sort Works</h2>
-        <div id="algorithmDescription">
-          <p><strong>What is Bubble Sort?</strong></p>
-          <p>Bubble Sort is one of the simplest sorting algorithms. It repeatedly steps through the list, compares adjacent elements, and swaps them if they are in the wrong order. This process is repeated until the list is sorted.</p>
-          <p><strong>How Does It Work?</strong></p>
-          <ol>
-            <li>Start at the beginning of the list.</li>
-            <li>Compare the first two elements. If the first is greater than the second, swap them.</li>
-            <li>Move to the next pair of elements and repeat the comparison and swap if necessary.</li>
-            <li>Continue this process until you reach the end of the list.</li>
-            <li>Repeat the entire process until no swaps are needed, indicating the list is sorted.</li>
-          </ol>
-          <p><strong>Where is It Used?</strong></p>
-          <p>Bubble Sort is rarely used in practice due to its inefficiency for large datasets. It is often used in educational settings to introduce the concept of sorting algorithms.</p>
-        </div>
-      </div>
+    <div class="truth-table">
+      <h2>8-Bit Comparator Truth Table</h2>
+      <p>An 8-bit comparator compares two 8-bit numbers (A and B) and outputs the relationship between them:</p>
+      <table>
+        <thead>
+          <tr>
+            <th>A (Decimal)</th>
+            <th>B (Decimal)</th>
+            <th>A (Binary)</th>
+            <th>B (Binary)</th>
+            <th>A > B</th>
+            <th>A = B</th>
+            <th>A < B</th>
+          </tr>
+        </thead>
+        <tbody id="truthTableBody">
+          <!-- Rows will be dynamically generated -->
+        </tbody>
+      </table>
+      <p><strong>Legend:</strong></p>
+      <ul>
+        <li><strong>A > B</strong>: Outputs 1 if A is greater than B.</li>
+        <li><strong>A = B</strong>: Outputs 1 if A is equal to B.</li>
+        <li><strong>A < B</strong>: Outputs 1 if A is less than B.</li>
+      </ul>
+    </div>
   </div>
   <audio id="swapSound" src="swap.mp3"></audio>
   <audio id="compareSound" src="compare.mp3"></audio>
